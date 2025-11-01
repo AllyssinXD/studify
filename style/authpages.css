@@ -1,0 +1,53 @@
+.form {
+  padding: 20px;
+  border-radius: 10px;
+  width: clamp(360px, 50vw, 70vw);
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: bold;
+  color: var(--forecolor);
+}
+
+.input {
+  padding: 20px;
+  min-height: 20px;
+  border-radius: 60px;
+  border: 1px solid var(--forecolor);
+  margin-bottom: 40px;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--antifore);
+  min-height: 20px;
+  font-size: 1.6rem;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 60px;
+  font-weight: 200;
+}
+
+.form .social-media .options {
+  display: flex;
+}
+
+.form .social-media {
+  margin-top: 60px;
+}
+
+.form .social-media span {
+  margin-top: 20px;
+}
+
+.form .social-media .option {
+  --radius: 60px;
+  width: var(--radius);
+  height: var(--radius);
+  border-radius: var(--radius);
+  background-color: var(--forecolor);
+  margin-right: 20px;
+  margin-top: 20px;
+}

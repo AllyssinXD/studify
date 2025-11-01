@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "Kenit"; /* Choose a name for your font */
+  src: url("../fonts/Kanit-Regular.ttf") format("truetype"); /* Specify the path and format */
+  /* Optional properties: */
+  font-weight: normal; /* Define the weight of this font */
+  font-style: normal; /* Define the style of this font */
+  font-display: swap; /* How the font is displayed while loading */
+}
+@font-face {
+  font-family: "Kenit"; /* Choose a name for your font */
+  src: url("../fonts/Kanit-Bold.ttf") format("truetype"); /* Specify the path and format */
+  /* Optional properties: */
+  font-weight: bold; /* Define the weight of this font */
+  font-style: normal; /* Define the style of this font */
+  font-display: swap; /* How the font is displayed while loading */
+}
+@font-face {
+  font-family: "Kenit"; /* Choose a name for your font */
+  src: url("../fonts/Kanit-Light.ttf") format("truetype"); /* Specify the path and format */
+  /* Optional properties: */
+  font-weight: 200; /* Define the weight of this font */
+  font-style: normal; /* Define the style of this font */
+  font-display: swap; /* How the font is displayed while loading */
+}
+
+:root {
+  --forecolor: #292d32;
+  --antifore: #ffffff;
+  --primary: #0004ff;
+}
+
+* {
+  font-family: "Kenit";
+}
