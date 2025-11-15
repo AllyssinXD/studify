@@ -24,9 +24,23 @@
 }
 
 :root {
-  --forecolor: #292d32;
-  --antifore: #ffffff;
+  --forecolor: #101115;
+  --bg-1: #ffffff;
+  --bg-2: #F2F2F2;
+  --bg-3: #E6E6E6;
   --primary: #0004ff;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+body.dark {
+  --forecolor: #EBEBEB;
+  --bg-1: #101115;
+  --bg-2: #1A1C23;
+  --bg-3: #252831;
 }
 
 * {

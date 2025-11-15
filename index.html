@@ -10,9 +10,16 @@
   <body>
     <div class="form">
       <h1>Logue na sua conta</h1>
-      <div class="input" id="input-email"></div>
-      <div class="input" id="input-password"></div>
-      <button>Login</button>
+      <div class="input" id="input-email">
+        <input type="text"/>
+      </div>
+      <div class="input input-password">
+        <input type="password" id="password"/>
+        <button class="toggle-pwd-visibility">
+          <img src="./imgs/eye-closed.svg"/>
+        </button>
+      </div>
+      <button class="primary">Login</button>
       <div class="social-media">
         <span>Ou logue com</span>
         <div class="options">
@@ -22,5 +29,19 @@
         </div>
       </div>
     </div>
+    <script defer>
+        const passwordInputs = document.getElementsByClassName("input-password");
+
+        for (let i = 0; i < passwordInputs.length; i++) {
+          const element = passwordInputs[i];
+          element.querySelector(".toggle-pwd-visibility").addEventListener("click", ()=>{
+            const input = element.querySelector("#password")
+            const togglePwd = element.querySelector(".toggle-pwd-visibility")
+            const isOpen = input.type == "password"
+            input.type = isOpen ? "text" : "password"
+            togglePwd.querySelector("img").src = isOpen ? "./imgs/eye-open.svg" : "./imgs/eye-closed.svg" 
+          })
+        }
+    </script>
   </body>
 </html>

@@ -1,33 +1,82 @@
 .form {
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
-  width: clamp(360px, 50vw, 70vw);
+  width: 280px;
   margin: 0 auto;
+  background-color: var(--bg-2);
+}
+
+body {
+  background-image: url("/imgs/auth-mobile-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100dvh;
+}
+
+@media (orientation: landscape) {
+  body {
+    background-image: url("/imgs/auth-desktop-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100dvh;
+  }
 }
 
 h1 {
   font-weight: bold;
   color: var(--forecolor);
+  font-size: 1.6rem;
+  margin-bottom: 24px;
 }
 
 .input {
-  padding: 20px;
+  padding: 10px;
   min-height: 20px;
   border-radius: 60px;
   border: 1px solid var(--forecolor);
-  margin-bottom: 40px;
+  margin-bottom: 24px;
+  background-color: var(--bg-1);
+  display: flex;
+  justify-content: space-between;
 }
 
-button {
-  background-color: var(--primary);
-  color: var(--antifore);
-  min-height: 20px;
-  font-size: 1.6rem;
+.input input{
   border: none;
-  padding: 15px;
+  outline: none;
+}
+
+button.primary {
+  background-color: var(--primary);
+  color: #FFF;
+  min-height: 20px;
+  font-size: 1rem;
+  border: none;
+  padding: 10px;
   width: 100%;
   border-radius: 60px;
   font-weight: 200;
+}
+
+.toggle-pwd-visibility {
+  border: none;
+  max-width: 30px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.toggle-pwd-visibility img{ 
+  width: 100%;
 }
 
 .form .social-media .options {
@@ -40,6 +89,7 @@ button {
 
 .form .social-media span {
   margin-top: 20px;
+  color: var(--forecolor);
 }
 
 .form .social-media .option {
