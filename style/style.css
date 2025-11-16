@@ -23,6 +23,18 @@
   font-display: swap; /* How the font is displayed while loading */
 }
 
+.flex {
+  display: flex;
+}
+
+.jb {
+  justify-content: space-between;
+}
+
+.aic {
+  align-items: center;
+}
+
 :root {
   --forecolor: #101115;
   --bg-1: #ffffff;
