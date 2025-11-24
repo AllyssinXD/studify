@@ -1,7 +1,7 @@
 function redirect(url) {
-    window.location.pathname = url
+  window.location.pathname = url;
 }
 
 function back() {
-    history.back()
+  history.back();
 }

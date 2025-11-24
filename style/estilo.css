@@ -3,18 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
-.background {
-  display: flex;
-  justify-content: center;
-  padding: 100px;
+body {
   width: 100%;
   height: 100vh;
   background-color: #101115;
 }
-
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .cards {
   display: flex;
   flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
   padding: 20px;
   width: 350px;
   height: 500px;
@@ -52,7 +55,7 @@
   height: 50px;
   border-radius: 50%;
   overflow: hidden;
-  background: url("/img/me.jpeg");
+  background: url("/imgs/me.jpeg");
   background-size: cover;
   cursor: pointer;
 }
@@ -66,5 +69,34 @@ p {
   height: 25px;
   margin-left: 110px;
   border: none;
+  cursor: pointer;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: 310px;
+  height: 20px;
+}
+.header1 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  background-color: #16181f;
+}
+.header1 ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style: none;
+}
+.header1 li {
+  display: inline;
+  justify-content: space-between;
+  width: 60px;
+}
+Aimg:hover {
   cursor: pointer;
 }
