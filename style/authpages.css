@@ -49,7 +49,6 @@ h1 {
   padding: 8px;
   min-height: 20px;
   border-radius: 60px;
-  border: 1px solid var(--forecolor);
   background-color: var(--bg-1);
   display: flex;
   justify-content: space-between;

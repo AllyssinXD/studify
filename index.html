@@ -4,18 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Studify</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/authpages.css" />
+    <script defer>
+      document.addEventListener("DOMContentLoaded", ()=>{
+        const inputs = document.getElementsByTagName("input")
+        for (let i = 0; i < inputs.length; i++) {
+          const item = inputs[i];
+          console.log()
+          item.addEventListener("focus", ()=>{
+            gsap.to(item.parentElement.querySelector("img"), {
+              marginLeft: -32,
+              duration: 1
+            })
+          });
+          item.addEventListener("blur", ()=>{
+            gsap.to(item.parentElement.querySelector("img"), {
+              marginLeft: 0,
+              duration: 1
+            })
+          });
+        }
+      })
+    </script>
   </head>
   <body>
-    <div class="form">
+    <div class="form min-w-90">
       <img class="logo" src="imgs/Logo.png"/>
       <h1>Logue na sua conta</h1>
-      <div class="input" id="input-email">
-        <input type="text"/>
+      <div class="input items-center overflow-hidden border border-[rgba(16,17,21,.17)]" id="input-email">
+        <img src="imgs/email-icon.png" class="w-6 h-6 mr-3 opacity-70"/>
+        <input type="text" class="text-sm" placeholder="Email"/>
       </div>
-      <div class="input input-password">
-        <input type="password" id="password"/>
+      <div class="input items-center border overflow-hidden border-[rgba(16,17,21,.17)]">
+        <img src="imgs/password-ico.png" class="w-6 h-6 mr-3 opacity-70"/>
+        <input type="password" class="text-sm" id="password" placeholder="Senha"/>
         <button class="toggle-pwd-visibility">
           <img src="./imgs/eye-closed.svg"/>
         </button>
