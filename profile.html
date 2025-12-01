@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="/style/style.css" />
     <script src="/js/script.js" defer></script>
     <script src="/js/main.js" defer></script>
+    <script>
+        function exitEdit(textarea) {
+            console.log(textarea.value.trim())
+            const newText = textarea.value.trim().replaceAll('\n', '<br>');
+            textarea.outerHTML = "<span class='block'>"+ newText +"</span>";
+        }
+        function edit(){
+            const container = document.querySelector("#bio-container");
+            const span = container.querySelector('span');
+            const oldContent = span.innerHTML.replace(/<br>/g, '\n');
+            
+            span.outerHTML = `
+                <textarea
+                class='min-h-40 w-full'
+                onblur=\"exitEdit(this)\">${oldContent}
+                </textarea>
+            `;
+        }
+    </script>
   </head>
   <body class="lexend-light dark">
     <div class="max-w-md mx-auto text-[var(--forecolor)] space-y-10">
@@ -48,16 +67,16 @@
                 </div>
             </div>
         </div>
-        <div class="space-y-4">
+        <div class="space-y-4" id="bio-container">
             <label class="font-[100]">bio</label>
-            <span class="block">
-                Provérbios 27:19 <br/>
-                1 João 5:4<br/>
-                SP<br/>
-                Pkziiin<br/>
-            </span>
+            <span class="block h-full">Provérbios 27:19 <br/>1 João 5:4<br/>SP<br/>Pkziiin<br/></span>
             <div class="flex space-x-3">
-                <button class="block p-2 bg-[var(--primary)] min-w-36 text-xs rounded-full">Editar perfil</button>
+                <button
+                    class="block p-2 bg-[var(--primary)] min-w-36 text-xs rounded-full"
+                    onclick="edit()"
+                >
+                    Editar perfil
+                </button>
                 <button class="block p-2 bg-[var(--primary)] min-w-36 text-xs rounded-full">Compartilhar</button>
             </div>
         </div>
