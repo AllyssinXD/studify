@@ -9,40 +9,50 @@
     <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/authpages.css" />
     <script defer>
-      document.addEventListener("DOMContentLoaded", ()=>{
-        const inputs = document.getElementsByTagName("input")
+      document.addEventListener("DOMContentLoaded", () => {
+        const inputs = document.getElementsByTagName("input");
         for (let i = 0; i < inputs.length; i++) {
           const item = inputs[i];
-          console.log()
-          item.addEventListener("focus", ()=>{
+          console.log();
+          item.addEventListener("focus", () => {
             gsap.to(item.parentElement.querySelector("img"), {
               marginLeft: -32,
-              duration: 1
-            })
+              duration: 1,
+            });
           });
-          item.addEventListener("blur", ()=>{
+          item.addEventListener("blur", () => {
             gsap.to(item.parentElement.querySelector("img"), {
               marginLeft: 0,
-              duration: 1
-            })
+              duration: 1,
+            });
           });
         }
-      })
+      });
     </script>
   </head>
   <body>
     <div class="form min-w-90">
-      <img class="logo" src="imgs/Logo.png"/>
+      <img class="logo" src="imgs/Logo.png" />
       <h1>Logue na sua conta</h1>
-      <div class="input items-center overflow-hidden border border-[rgba(16,17,21,.17)]" id="input-email">
-        <img src="imgs/email-icon.png" class="w-6 h-6 mr-3 opacity-70"/>
-        <input type="text" class="text-sm" placeholder="Email"/>
+      <div
+        class="input items-center overflow-hidden border border-[rgba(16,17,21,.17)]"
+        id="input-email"
+      >
+        <img src="imgs/email-icon.png" class="w-6 h-6 mr-3 opacity-70" />
+        <input type="text" class="text-sm" placeholder="Email" />
       </div>
-      <div class="input items-center border overflow-hidden border-[rgba(16,17,21,.17)]">
-        <img src="imgs/password-ico.png" class="w-6 h-6 mr-3 opacity-70"/>
-        <input type="password" class="text-sm" id="password" placeholder="Senha"/>
+      <div
+        class="input items-center border overflow-hidden border-[rgba(16,17,21,.17)]"
+      >
+        <img src="imgs/password-ico.png" class="w-6 h-6 mr-3 opacity-70" />
+        <input
+          type="password"
+          class="text-sm"
+          id="password"
+          placeholder="Senha"
+        />
         <button class="toggle-pwd-visibility">
-          <img src="./imgs/eye-closed.svg"/>
+          <img src="./imgs/eye-closed.svg" />
         </button>
       </div>
       <a href="/forgot-password.html">Esqueci minha senha</a>
@@ -58,18 +68,22 @@
       <button class="secondary">Não tenho uma conta</button>
     </div>
     <script defer>
-        const passwordInputs = document.getElementsByClassName("input-password");
+      const passwordInputs = document.getElementsByClassName("input-password");
 
-        for (let i = 0; i < passwordInputs.length; i++) {
-          const element = passwordInputs[i];
-          element.querySelector(".toggle-pwd-visibility").addEventListener("click", ()=>{
-            const input = element.querySelector("#password")
-            const togglePwd = element.querySelector(".toggle-pwd-visibility")
-            const isOpen = input.type == "password"
-            input.type = isOpen ? "text" : "password"
-            togglePwd.querySelector("img").src = isOpen ? "./imgs/eye-open.svg" : "./imgs/eye-closed.svg" 
-          })
-        }
+      for (let i = 0; i < passwordInputs.length; i++) {
+        const element = passwordInputs[i];
+        element
+          .querySelector(".toggle-pwd-visibility")
+          .addEventListener("click", () => {
+            const input = element.querySelector("#password");
+            const togglePwd = element.querySelector(".toggle-pwd-visibility");
+            const isOpen = input.type == "password";
+            input.type = isOpen ? "text" : "password";
+            togglePwd.querySelector("img").src = isOpen
+              ? "./imgs/eye-open.svg"
+              : "./imgs/eye-closed.svg";
+          });
+      }
     </script>
   </body>
 </html>
