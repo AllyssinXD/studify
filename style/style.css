@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 @font-face {
   font-family: "Kenit"; /* Choose a name for your font */
   src: url("../fonts/Kanit-Regular.ttf") format("truetype"); /* Specify the path and format */
@@ -21,6 +23,27 @@
   font-weight: 200; /* Define the weight of this font */
   font-style: normal; /* Define the style of this font */
   font-display: swap; /* How the font is displayed while loading */
+}
+
+.lexend-regular {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.lexend-bold {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.lexend-light {
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .flex {
@@ -55,6 +78,3 @@ body.dark {
   --bg-3: #252831;
 }
 
-* {
-  font-family: "Kenit";
-}

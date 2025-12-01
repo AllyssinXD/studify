@@ -3,3 +3,8 @@ function cardflip() {
   virar.classList.add("alterar");
   console.log("está funcionando");
 }
+
+function cardflip(element) {
+  element.classList.add("flipar");
+  console.log("está funcionando");
+}

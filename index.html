@@ -8,6 +8,12 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/authpages.css" />
+    <style>
+      * {
+        font-family: "Kenit";
+      }
+    </style>
+    <script defer src="js/main.js"></script>
     <script defer>
       document.addEventListener("DOMContentLoaded", () => {
         const inputs = document.getElementsByTagName("input");
@@ -42,7 +48,7 @@
         <input type="text" class="text-sm" placeholder="Email" />
       </div>
       <div
-        class="input items-center border overflow-hidden border-[rgba(16,17,21,.17)]"
+        class="input input-password items-center border overflow-hidden border-[rgba(16,17,21,.17)]"
       >
         <img src="imgs/password-ico.png" class="w-6 h-6 mr-3 opacity-70" />
         <input
@@ -56,13 +62,19 @@
         </button>
       </div>
       <a href="/forgot-password.html">Esqueci minha senha</a>
-      <button class="primary">Login</button>
+      <button class="primary" onclick="login()">Login</button>
       <div class="social-media">
         <span>Ou logue com</span>
         <div class="options">
-          <div class="option"></div>
-          <div class="option"></div>
-          <div class="option"></div>
+          <div class="option">
+            <img src="imgs/google.png"/>
+          </div>
+          <div class="option">
+            <img src="imgs/linkedin.png"/>
+          </div>
+          <div class="option">
+            <img src="imgs/github_PNG80.png"/>
+          </div>
         </div>
       </div>
       <button class="secondary">Não tenho uma conta</button>

@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 @keyframes scale-up {
   0% {
     transform: scale(0.5);
@@ -23,9 +19,7 @@
 
 body {
   width: 100%;
-  height: 100vh;
   background: #101115;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
 .container {
@@ -167,7 +161,6 @@ img:hover {
 }
 
 footer {
-  background-color: #15171f;
   display: none;
   justify-content: center;
   align-items: center;
@@ -198,6 +191,8 @@ footer {
 }
 .change li {
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .change li img {
@@ -231,6 +226,11 @@ footer {
     display: none;
   }
 }
+
+.flipar {
+  animation: rotate 1s 0s 1 normal both;
+}
+
 
 .alterar {
   display: inline;
