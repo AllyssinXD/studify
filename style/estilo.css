@@ -60,8 +60,6 @@ body {
   border-radius: 20px;
   background-color: #101115;
   border: 1px solid #ffffff;
-  animation: rotate 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal
-    both;
 }
 .cardsRetangular footer {
   display: flex;
@@ -139,6 +137,10 @@ p {
   margin-top: 30px;
   width: 200px;
 }
+button:hover {
+  background-color: #1c2574;
+  cursor: pointer;
+}
 header {
   display: flex;
   flex-flow: row wrap;
@@ -203,12 +205,13 @@ footer {
 .change li img {
   display: flex;
   height: 80%;
+  cursor: pointer;
   align-items: center;
 }
 .popup-notificacao {
   position: absolute;
   display: none;
-  bottom: 755px;
+  bottom: 405px;
   right: 670px;
   background-color: #000;
   text-align: center;
@@ -232,6 +235,42 @@ footer {
   }
 }
 
+.popup-respostas {
+  position: absolute;
+  width: 360px;
+  height: 306px;
+  display: none;
+  right: 760px;
+  bottom: 400px;
+  background-color: #262a35;
+  text-align: center;
+  border-radius: 20px;
+}
+.popup-aparecer {
+  display: inline;
+  animation: scale-up 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) 0s 1 normal both;
+  animation: rotate 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) 0s 1 normal both;
+}
+.resposta {
+  position: relative;
+  width: 224px;
+  cursor: pointer;
+  height: 34px;
+  background-color: rgb(131, 179, 84);
+  left: 60px;
+  top: 70px;
+  border-radius: 20px;
+}
+.Explicacao {
+  cursor: pointer;
+  position: relative;
+  border-radius: 40px;
+  top: 160px;
+  left: 10px;
+  width: 324px;
+  height: 34px;
+  background-color: #1c2574;
+}
 .alterar {
   display: inline;
   animation: scale-up 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) 0s 1 normal both;
