@@ -14,6 +14,7 @@
             console.log(textarea.value.trim())
             const newText = textarea.value.trim().replaceAll('\n', '<br>');
             textarea.outerHTML = "<span class='block'>"+ newText +"</span>";
+            localStorage.setItem("bio", newText)
         }
         function edit(){
             const container = document.querySelector("#bio-container");
@@ -27,9 +28,30 @@
                 </textarea>
             `;
         }
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            const container = document.querySelector("#bio-container");
+            const span = container.querySelector('span');
+            if(localStorage.getItem("bio")) {
+                span.innerHTML = localStorage.getItem("bio")
+            }
+        })
     </script>
   </head>
   <body class="lexend-light dark">
+    <header id="wide-nav" class="hidden md:block h-screen fixed bg-[var(--bg-2)] p-3">
+      <ul class="flex flex-col gap-10">
+        <li>
+          <a href="/home.html"><img src="/imgs/Logo3.png" /></a>
+        </li>
+        <li>
+          <a href="#"><img class="invert w-6 mx-auto block" src="/imgs/create-note-svgrepo-com.svg" /></a>
+        </li>
+        <li>
+          <a href="#"> <img src="/imgs/Group 36.png" /> </a>
+        </li>
+      </ul>
+    </header>
     <div class="max-w-md mx-auto text-[var(--forecolor)] space-y-10">
         <div class="flex justify-between p-5">
             <div>
@@ -86,7 +108,7 @@
         </div>
         <div class="border-b mb-5">
         </div>
-        <div class="w-full p-5 mb-10 border border-white rounded-xl min-h-80 text-[var(--forecolor)]">
+        <div class="w-full p-5 mb-10 bg-[var(--bg-2)] rounded-xl min-h-80 text-[var(--forecolor)]">
           <div class="flex justify-between items-center">
             <div class="grid grid-cols-[50px_auto] grid-rows-[50px]">
               <img class="profile" />
@@ -112,7 +134,7 @@
             <img src="/imgs/save.png" />
           </footer>
         </div>
-        <div class="w-full p-5 border border-white rounded-xl min-h-80 text-[var(--forecolor)] space-y-4">
+        <div class="w-full p-5 bg-[var(--bg-2)] rounded-xl min-h-80 text-[var(--forecolor)] space-y-4">
           <div class="flex justify-between items-center">
             <div class="grid grid-cols-[50px_auto] grid-rows-[50px]">
               <img class="profile" />
