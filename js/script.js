@@ -7,7 +7,7 @@ function cardflip() {
   console.log("está funcionando");
 }
 
-function flipResposta() {
-  const virar = document.querySelector(".popup-respostas");
-  virar.classList.add("popup-aparecer");
+function cardflip(element) {
+  element.classList.add("flipar");
+  console.log("está funcionando");
 }

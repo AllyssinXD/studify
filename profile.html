@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/estilo.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/style/style.css" />
+    <script src="/js/script.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script>
+        function exitEdit(textarea) {
+            console.log(textarea.value.trim())
+            const newText = textarea.value.trim().replaceAll('\n', '<br>');
+            textarea.outerHTML = "<span class='block'>"+ newText +"</span>";
+        }
+        function edit(){
+            const container = document.querySelector("#bio-container");
+            const span = container.querySelector('span');
+            const oldContent = span.innerHTML.replace(/<br>/g, '\n');
+            
+            span.outerHTML = `
+                <textarea
+                class='min-h-40 w-full'
+                onblur=\"exitEdit(this)\">${oldContent}
+                </textarea>
+            `;
+        }
+    </script>
+  </head>
+  <body class="lexend-light dark">
+    <div class="max-w-md mx-auto text-[var(--forecolor)] space-y-10">
+        <div class="flex justify-between p-5">
+            <div>
+                perfil
+            </div>
+            <div class="space-y-1">
+                <div class="h-1 w-6 bg-[var(--forecolor)] rounded-full"></div>
+                <div class="h-1 w-6 bg-[var(--forecolor)] rounded-full"></div>
+                <div class="h-1 w-6 bg-[var(--forecolor)] rounded-full"></div>
+            </div>
+        </div>
+        <div class="flex justify-between items-center">
+            <img src="imgs/me.jpeg" class="w-30 h-30 rounded-full"/>
+            <div class="w-full px-4 grid gap-3 grid-cols-[1fr_1fr_1fr] grid-rows-[auto_auto_auto]">
+                <span class="font-bold col-span-2">Victor Barbosa</span>
+                <div class="row-2 col-1">
+                    <span class="block font-bold">200</span>
+                    <span class="block">amigos</span>
+                </div>
+                <div class="row-2 col-2">
+                    <span class="block font-bold">200</span>
+                    <span class="block">seguidores</span>
+                </div>
+                <div class="row-2 col-3">
+                    <span class="block font-bold">200</span>
+                    <span class="block">seguindo</span>
+                </div>
+                <div class="row-3 col-span-3 flex">
+                    <div class="flex mr-3">
+                        <div class="bg-[var(--primary)] h-5 w-5 rounded-full"></div>
+                        <div class="-ml-3 shadow-[0px_0px_10px] shadow-black bg-[var(--primary)] h-5 w-5 rounded-full"></div>
+                        <div class="-ml-3 shadow-[0px_0px_10px] shadow-black bg-[var(--primary)] h-5 w-5 rounded-full"></div>
+                    </div>
+                    <span class="block text-xs">Seguido por Alisson e outras pessoas</span>
+                </div>
+            </div>
+        </div>
+        <div class="space-y-4" id="bio-container">
+            <label class="font-[100]">bio</label>
+            <span class="block h-full">Provérbios 27:19 <br/>1 João 5:4<br/>SP<br/>Pkziiin<br/></span>
+            <div class="flex space-x-3">
+                <button
+                    class="block p-2 bg-[var(--primary)] min-w-36 text-xs rounded-full"
+                    onclick="edit()"
+                >
+                    Editar perfil
+                </button>
+                <button class="block p-2 bg-[var(--primary)] min-w-36 text-xs rounded-full">Compartilhar</button>
+            </div>
+        </div>
+        <div class="">
+        <div class="border-b-2 w-20">
+            <label class="font-[100] block">Cartões</label>
+        </div>
+        <div class="border-b mb-5">
+        </div>
+        <div class="w-full p-5 mb-10 border border-white rounded-xl min-h-80 text-[var(--forecolor)]">
+          <div class="flex justify-between items-center">
+            <div class="grid grid-cols-[50px_auto] grid-rows-[50px]">
+              <img class="profile" />
+              <div>
+                <p class="name"><span class="lexend-bold">Victor</span> Barbosa</p>
+                <p class="font-[100]">@victorbarbosa</p>
+              </div>
+            </div>
+            <img class="moreR" src="/imgs/more-2-svgrepo-com.svg" />
+          </div>
+          <span class="font-[400] mt-6 block">Qual desses não é um elemento de uma bactéria:</span>
+          <ul class="my-5 space-y-3">
+            <div><li class="flex gap-3"><input type="radio" id="css" class="block" name="answer-1" value="citoplasma">citoplasma</li></div>
+            <div><li class="flex gap-3"><input type="radio" id="css" class="block" name="answer-1" value="citoplasma">membrana plasmática</li></div>
+            <div><li class="flex gap-3"><input type="radio" id="css" class="block" name="answer-1" value="citoplasma">parede celular</li></div>
+            <div><li class="flex gap-3"><input type="radio" id="css" class="block" name="answer-1" value="citoplasma">mitocôndria</li></div>
+          </ul>
+          <button class="block p-2 bg-[var(--primary)] min-w-64 rounded-full mx-auto" onclick="cardflip(this.parentElement);'flex justify-center items-center'.split(' ').forEach((item)=>this.parentElement.classList.add(item));this.parentElement.innerHTML = '<p>Resposta certa : mitocondria</p>';">virar</button>
+          <footer>
+            <img src="/imgs/heartsvg.png" />
+            <img src="/imgs/ballon.png" />
+            <img src="/imgs/send.png" />
+            <img src="/imgs/save.png" />
+          </footer>
+        </div>
+        <div class="w-full p-5 border border-white rounded-xl min-h-80 text-[var(--forecolor)] space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="grid grid-cols-[50px_auto] grid-rows-[50px]">
+              <img class="profile" />
+              <div>
+                <p class="name"><span class="lexend-bold">Victor</span> Barbosa</p>
+                <p class="font-[100]">@victorbarbosa</p>
+              </div>
+            </div>
+            <img class="moreR" src="/imgs/more-2-svgrepo-com.svg" />
+          </div>
+          <span class="block font-[400]">
+            Programação em C#
+          </span>
+          <span class="block">
+            Qual a função da richtextbox?<br />
+            se alguém puder esclarecer eu agradeço
+          </span>
+          <input class="block p-2 w-full border border-[var(--bg1)] rounded-full text-[var(--forecolor)]"/>
+          <button class="block p-2 bg-[var(--primary)] min-w-64 rounded-full mx-auto" onclick="cardflip(this.parentElement);'flex justify-center items-center'.split(' ').forEach((item)=>this.parentElement.classList.add(item));this.parentElement.innerHTML = '<p>Obrigado por responder</p>';">virar</button>
+          <footer>
+            <img src="/imgs/heartsvg.png" /><img src="/imgs/ballon.png" /><img
+              src="/imgs/send.png"
+            /><img src="/imgs/save.png" />
+          </footer>
+        </div>
+        </div>
+    </div>
+    <footer class="fixed bottom-2 w-screen">
+        <div class="change mx-auto">
+            <ul>
+            <li><img src="/imgs/logo3.png" /></li>
+            <li><img src="/imgs/plus-svgrepo-com (1) 1.png" /></li>
+            <li><img src="/imgs/Group 36.png" /></li>
+            </ul>
+        </div>
+    </footer>
+  </body>
+</html>
+ 
