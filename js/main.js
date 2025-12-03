@@ -20,8 +20,9 @@ function login(){
 
 document.addEventListener("DOMContentLoaded", ()=>{
   let footers = document.getElementsByTagName("footer")
-  console.log(footers)
-  let links = footers[footers.length-1].querySelectorAll("li")
+  let wideNav = document.getElementById("wide-nav")
+  let links = wideNav.querySelectorAll("li")
+  let linksMobile = footers[footers.length-1].querySelectorAll("li")
 
   links.forEach((link, i)=>{
     link.addEventListener("click", ()=>{
@@ -32,4 +33,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
       redirect(red)
     })
   })
+
+  linksMobile.forEach((link, i)=>{
+      link.addEventListener("click", ()=>{
+        let red = "";
+        if(i == 0) red= "home.html"
+        if(i == 1) red = "home.html"
+        if(i == 2) red = "profile.html"
+        redirect(red)
+      })
+    })
 })
